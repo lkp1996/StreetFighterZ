@@ -4,15 +4,13 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity" prefHeight="368.0"
-	prefWidth="535.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CharSelectController">
 	<children>
 		<Label text="Choose the two opponents">
 			<font>
@@ -27,16 +25,14 @@
 		</Label>
 		<HBox prefHeight="177.0" prefWidth="570.0">
 			<children>
-				<ImageView fitHeight="150.0" fitWidth="120.0"
-					pickOnBounds="true" preserveRatio="true">
+				<ImageView fitHeight="150.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
 					<HBox.margin>
 						<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
 					</HBox.margin>
 				</ImageView>
 				<VBox prefHeight="200.0" prefWidth="100.0">
 					<children>
-						<Label alignment="CENTER" prefHeight="17.0" prefWidth="119.0"
-							text="Player 1">
+						<Label alignment="CENTER" prefHeight="17.0" prefWidth="119.0" text="Player 1">
 							<font>
 								<Font size="13.0" />
 							</font>
@@ -46,9 +42,7 @@
 						</Label>
 						<HBox prefHeight="100.0" prefWidth="200.0">
 							<children>
-								<Button id="btnChar1P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 1">
+								<Button id="btnChar1P1" fx:id="btnP1Char1" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 1">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -56,33 +50,7 @@
 										<Font size="8.0" />
 									</font>
 								</Button>
-								<Button id="btnChar2P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 2">
-									<HBox.margin>
-										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-									</HBox.margin>
-									<font>
-										<Font size="8.0" />
-									</font>
-								</Button>
-							</children>
-						</HBox>
-						<HBox prefHeight="100.0" prefWidth="200.0">
-							<children>
-								<Button id="btnChar3P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 3">
-									<HBox.margin>
-										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-									</HBox.margin>
-									<font>
-										<Font size="8.0" />
-									</font>
-								</Button>
-								<Button id="btnChar4P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 4">
+								<Button id="btnChar2P1" fx:id="btnP1Char2" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 2">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -94,9 +62,7 @@
 						</HBox>
 						<HBox prefHeight="100.0" prefWidth="200.0">
 							<children>
-								<Button id="btnChar5P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 5">
+								<Button id="btnChar3P1" fx:id="btnP1Char3" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 3">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -104,9 +70,27 @@
 										<Font size="8.0" />
 									</font>
 								</Button>
-								<Button id="btnChar6P1" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 6">
+								<Button id="btnChar4P1" fx:id="btnP1Char4" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 4">
+									<HBox.margin>
+										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+									</HBox.margin>
+									<font>
+										<Font size="8.0" />
+									</font>
+								</Button>
+							</children>
+						</HBox>
+						<HBox prefHeight="100.0" prefWidth="200.0">
+							<children>
+								<Button id="btnChar5P1" fx:id="btnP1Char5" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 5">
+									<HBox.margin>
+										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+									</HBox.margin>
+									<font>
+										<Font size="8.0" />
+									</font>
+								</Button>
+								<Button id="btnChar6P1" fx:id="btnP1Char6" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 6">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -123,8 +107,7 @@
 				</VBox>
 				<VBox prefHeight="200.0" prefWidth="100.0">
 					<children>
-						<Label alignment="CENTER" prefHeight="17.0" prefWidth="120.0"
-							text="Player 2">
+						<Label alignment="CENTER" prefHeight="17.0" prefWidth="120.0" text="Player 2">
 							<font>
 								<Font size="13.0" />
 							</font>
@@ -134,9 +117,7 @@
 						</Label>
 						<HBox prefHeight="100.0" prefWidth="200.0">
 							<children>
-								<Button id="btnChar1P2" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 1">
+								<Button id="btnChar1P2" fx:id="btnP2Char1" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 1">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -144,32 +125,7 @@
 										<Font size="8.0" />
 									</font>
 								</Button>
-								<Button id="btnChar2P2" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 2">
-									<HBox.margin>
-										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-									</HBox.margin>
-									<font>
-										<Font size="8.0" />
-									</font>
-								</Button>
-							</children>
-						</HBox>
-						<HBox prefHeight="100.0" prefWidth="200.0">
-							<children>
-								<Button id="btnChar3P2" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 3">
-									<HBox.margin>
-										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
-									</HBox.margin>
-									<font>
-										<Font size="8.0" />
-									</font>
-								</Button>
-								<Button id="btnChar4P2" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 4">
+								<Button id="btnChar2P2" fx:id="btnP2Char2" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 2">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -181,8 +137,7 @@
 						</HBox>
 						<HBox prefHeight="100.0" prefWidth="200.0">
 							<children>
-								<Button id="btnChar5P2" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 5">
+								<Button id="btnChar3P2" fx:id="btnP2Char3" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 3">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -190,9 +145,27 @@
 										<Font size="8.0" />
 									</font>
 								</Button>
-								<Button id="btnChar6P2" maxHeight="55.0" maxWidth="55.0"
-									minHeight="55.0" minWidth="55.0" mnemonicParsing="false"
-									prefHeight="55.0" prefWidth="55.0" text="name 6">
+								<Button id="btnChar4P2" fx:id="btnP2Char4" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 4">
+									<HBox.margin>
+										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+									</HBox.margin>
+									<font>
+										<Font size="8.0" />
+									</font>
+								</Button>
+							</children>
+						</HBox>
+						<HBox prefHeight="100.0" prefWidth="200.0">
+							<children>
+								<Button id="btnChar5P2" fx:id="btnP2Char5" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 5">
+									<HBox.margin>
+										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+									</HBox.margin>
+									<font>
+										<Font size="8.0" />
+									</font>
+								</Button>
+								<Button id="btnChar6P2" fx:id="btnP2Char6" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#onCharChoosenEvent" prefHeight="55.0" prefWidth="55.0" text="name 6">
 									<HBox.margin>
 										<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
 									</HBox.margin>
@@ -210,8 +183,7 @@
 						<Insets bottom="15.0" left="15.0" right="15.0" />
 					</HBox.margin>
 				</VBox>
-				<ImageView fitHeight="150.0" fitWidth="120.0"
-					pickOnBounds="true" preserveRatio="true">
+				<ImageView fitHeight="150.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
 					<HBox.margin>
 						<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
 					</HBox.margin>
@@ -227,21 +199,33 @@
 				<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
 			</VBox.margin>
 		</HBox>
-		<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0"
-			spacing="50.0">
-			<children>
-				<Button id="btnBack" mnemonicParsing="false" text="Back" />
-				<Button id="btnRandomP1" mnemonicParsing="false" text="Random">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+         <children>
+				<Button id="btnRandomP1" fx:id="btnRandomP1" mnemonicParsing="false" onAction="#randomizeChar1" text="Random">
 					<HBox.margin>
 						<Insets right="25.0" />
 					</HBox.margin>
 				</Button>
-				<Button id="btnRandomP2" mnemonicParsing="false" text="Random">
+				<Button id="btnRandomP2" fx:id="btnRandomP2" mnemonicParsing="false" onAction="#randomizeChar2" text="Random">
 					<HBox.margin>
 						<Insets left="25.0" />
 					</HBox.margin>
 				</Button>
-				<Button id="btnBattle" mnemonicParsing="false" text="Battle" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="15.0" left="15.0" right="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" text="Rounds" />
+         </children>
+      </HBox>
+		<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+			<children>
+				<Button id="btnBack" fx:id="btnBack" mnemonicParsing="false" onAction="#goBackToMain" text="Back" />
+            <Slider fx:id="sldNumRound" blockIncrement="2.0" majorTickUnit="2.0" max="5.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" value="1.0" />
+				<Button id="btnBattle" fx:id="btnBattle" mnemonicParsing="false" onAction="#goToBattle" text="Battle" />
 			</children>
 			<VBox.margin>
 				<Insets bottom="15.0" left="15.0" right="15.0" />
