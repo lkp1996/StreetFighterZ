@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox id="vbMain" maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="279.0"
+	prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1">
+	<children>
+		<Label id="lblChooseGameMode" alignment="CENTER" contentDisplay="CENTER"
+			prefHeight="30.0" prefWidth="590.0" text="Choose a game mode"
+			textAlignment="CENTER">
+			<font>
+				<Font size="20.0" />
+			</font>
+		</Label>
+		<HBox id="hbButtons" alignment="CENTER" prefHeight="232.0"
+			prefWidth="570.0" spacing="50.0">
+			<children>
+				<Button id="btnSinglePlayer" mnemonicParsing="false"
+					onAction="#btnSignlePlayerAction" prefHeight="35.0" prefWidth="150.0"
+					text="Single Player">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Button>
+				<Button id="btnTwoPlayers" mnemonicParsing="false"
+					onAction="#btnTwoPlayedAction" prefHeight="35.0" prefWidth="150.0"
+					text="Two Player">
+					<font>
+						<Font size="15.0" />
+					</font>
+				</Button>
+			</children>
+		</HBox>
+	</children>
+	<padding>
+		<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+	</padding>
+</VBox>
