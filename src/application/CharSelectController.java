@@ -86,6 +86,6 @@ public class CharSelectController {
     }
     
     public void init() {
-
+	model.getRoundsPty().bind(sldNumRound.valueProperty());
     }
 }
