@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Control;
 import javafx.scene.control.Slider;
 import javafx.stage.Stage;
 
@@ -69,7 +70,11 @@ public class CharSelectController {
 
 	@FXML
 	private void onCharChoosenEvent(ActionEvent e) {
-
+		Button clickedButton = (Button) e.getSource();
+		String idClick = clickedButton.getId();
+		boolean joueur = idClick.endsWith("1");// true = joueur 1 / false = joueur 2
+		char charact = idClick.charAt(7); // id du caractère séléctionné
+		System.out.println(joueur + " " + charact);
 	}
 
 	@FXML
