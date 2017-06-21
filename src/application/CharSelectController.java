@@ -1,6 +1,14 @@
 package application;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,14 +17,21 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Control;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class CharSelectController {
 
 	private CharSelectModel model = new CharSelectModel();
 
+	@FXML
+	private ImageView imageP1;
+	
+	@FXML
+	private ImageView imageP2;
+	
 	@FXML
 	private Button btnP1Char1;
 
@@ -72,9 +87,15 @@ public class CharSelectController {
 	private void onCharChoosenEvent(ActionEvent e) {
 		Button clickedButton = (Button) e.getSource();
 		String idClick = clickedButton.getId();
-		boolean joueur = idClick.endsWith("1");// true = joueur 1 / false = joueur 2
+		boolean joueur = idClick.endsWith("1");	// true = joueur 1
+												// false = joueur 2
 		char charact = idClick.charAt(7); // id du caractère séléctionné
-		System.out.println(joueur + " " + charact);
+		
+		String url = "/img/" + charact + ".png";
+		Image img = new Image(getClass().getResource(url).toExternalForm(), 150.0, 120.0, true, true);
+		
+		if(joueur) imageP1.setImage(img);
+		else imageP2.setImage(img);
 	}
 
 	@FXML
@@ -110,12 +131,6 @@ public class CharSelectController {
 	}
 
 	public void init() {
-
-	}
-
-	public void setPrevStage(Stage primaryStage) {
-
-		this.prevStage = prevStage;
 
 	}
 
