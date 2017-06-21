@@ -48,12 +48,15 @@
 		</Label>
 		<HBox prefHeight="177.0" prefWidth="570.0">
 			<children>
-				<ImageView fitHeight="150.0" fitWidth="120.0"
-					pickOnBounds="true" preserveRatio="true" id="imageP1" fx:id="imageP1">
-					<HBox.margin>
-						<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-					</HBox.margin>
-				</ImageView>
+				<VBox minWidth="120" alignment="TOP_CENTER">
+					<Label fx:id="name1" id="name1"  alignment="CENTER" minWidth="120" minHeight="50"/>
+					<ImageView fitHeight="150.0" fitWidth="120.0" 
+						pickOnBounds="true" preserveRatio="true" id="imageP1" fx:id="imageP1">
+						<HBox.margin>
+							<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+						</HBox.margin>
+					</ImageView>
+				</VBox>
 				<VBox prefHeight="200.0" prefWidth="100.0">
 					<children>
 						<Label alignment="CENTER" prefHeight="17.0" prefWidth="119.0"
@@ -291,15 +294,18 @@
 						<Insets bottom="15.0" left="15.0" right="15.0" />
 					</HBox.margin>
 				</VBox>
-				<ImageView fitHeight="150.0" fitWidth="120.0"
-					pickOnBounds="true" preserveRatio="true" id="imageP2" fx:id="imageP2">
-					<HBox.margin>
-						<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-					</HBox.margin>
-					<viewport>
-						<Rectangle2D />
-					</viewport>
-				</ImageView>
+				<VBox minWidth="120"  alignment="TOP_CENTER">
+					<Label fx:id="name2" id="name2" alignment="CENTER" minWidth="120" minHeight="50"/>
+					<ImageView fitHeight="150.0" fitWidth="120.0"
+						pickOnBounds="true" preserveRatio="true" id="imageP2" fx:id="imageP2">
+						<HBox.margin>
+							<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+						</HBox.margin>
+						<viewport>
+							<Rectangle2D />
+						</viewport>
+					</ImageView>
+				</VBox>
 			</children>
 			<opaqueInsets>
 				<Insets />
