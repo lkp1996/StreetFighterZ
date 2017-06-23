@@ -32,12 +32,11 @@ public class MainController {
 	private RadioButton rbHard;
 
 	/**
-	 * Methode permettant de passer à la fenêtre Character Select en mode
+	 * Methode permettant de passer a� la fenetre Character Select en mode
 	 * single player
 	 */
 	@FXML
 	private void onSingleClick(ActionEvent event) {
-		System.out.println("sigle player click");
 		try {
 			Parent charSelectParent = FXMLLoader.load(getClass().getResource("StreetFighterZCharSelect.fxml"));
 			Scene charSelectScene = new Scene(charSelectParent);

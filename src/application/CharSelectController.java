@@ -1,15 +1,7 @@
 package application;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -90,6 +82,9 @@ public class CharSelectController {
 
 	@FXML
 	private Slider sldNumRound;
+	
+	private boolean j1Selected = false;
+	private boolean j2Selected = false;
 
 	@FXML
 	private void onCharChoosenEvent(ActionEvent e) {
@@ -130,9 +125,11 @@ public class CharSelectController {
 		if (joueur) {
 			imageP1.setImage(img);
 			name1.setText(nomPerso);
+			j1Selected = true;
 		} else {
 			imageP2.setImage(img);
 			name2.setText(nomPerso);
+			j2Selected = true;
 		}
 	}
 
@@ -142,6 +139,7 @@ public class CharSelectController {
 		String charactS =  "" + (r.nextInt(6) + 1);
 		char charact = charactS.charAt(0);
 		selecChar(true, charact);
+		j1Selected = true;
 	}
 
 	@FXML
@@ -150,6 +148,7 @@ public class CharSelectController {
 		String charactS =  "" + (r.nextInt(6) + 1);
 		char charact = charactS.charAt(0);
 		selecChar(false, charact);
+		j2Selected = true;
 	}
 
 	@FXML
@@ -170,12 +169,33 @@ public class CharSelectController {
 	}
 
 	@FXML
-	private void goToBattle(ActionEvent e) {
+	private void goToBattle(ActionEvent event) {
+		if(!allPlayerSelectedCharacter()){
+			// affiche popup pour séléctionner un personnage
+			System.out.println("veuillez séléctionner un personnage pour chaque joueur");
+			return;
+		}
+		((Node) (event.getSource())).getScene().getWindow().hide();
+		Stage stage = new Stage();
+		Parent root = null;
 
+		try {
+			root = FXMLLoader.load(getClass().getResource("StreetFighterZFight.fxml"));
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+
+		Scene scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	public void init() {
 
+	}
+	
+	private boolean allPlayerSelectedCharacter(){
+		return true;
 	}
 
 }
