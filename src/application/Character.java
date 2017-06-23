@@ -13,6 +13,10 @@ public class Character {
 	this.attacks = attacks;
     }
 
+    public Character() {
+
+    }
+
     public String getName() {
 	return name;
     }
