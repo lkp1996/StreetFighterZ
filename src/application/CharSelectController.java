@@ -6,6 +6,7 @@ import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,6 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CharSelectController {
@@ -181,6 +184,21 @@ public class CharSelectController {
     @FXML
     private void goToBattle(ActionEvent event) {
 	if (!allPlayerSelectedCharacter()) {
+		Stage popup = new Stage();
+		popup.initModality(Modality.APPLICATION_MODAL);
+		popup.setTitle("Selection de personnages");
+		Label msgInfo = new Label("Veuillez selectionner un personnage\npour chaque joueur");
+		Button buttonOK = new Button("    OK    ");
+		buttonOK.minWidth(200);
+		buttonOK.setOnAction(e -> popup.close());
+		VBox layout = new VBox(10);
+		layout.setAlignment(Pos.CENTER);
+		layout.getChildren().add(msgInfo);
+		layout.getChildren().add(buttonOK);
+		Scene scenePopup = new Scene(layout, 350, 100);
+		
+		popup.setScene(scenePopup);
+		popup.showAndWait();
 	    // affiche popup pour sélectionner un personnage
 	    System.out.println("veuillez selectionner un personnage pour chaque joueur");
 	    return;
@@ -206,7 +224,7 @@ public class CharSelectController {
     }
 
     private boolean allPlayerSelectedCharacter() {
-	return true;
+	return j1Selected && j2Selected;
     }
 
 }
