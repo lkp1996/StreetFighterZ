@@ -181,8 +181,8 @@ public class CharSelectController {
     @FXML
     private void goToBattle(ActionEvent event) {
 	if (!allPlayerSelectedCharacter()) {
-	    // affiche popup pour s�l�ctionner un personnage
-	    System.out.println("veuillez s�l�ctionner un personnage pour chaque joueur");
+	    // affiche popup pour sélectionner un personnage
+	    System.out.println("veuillez sélectionner un personnage pour chaque joueur");
 	    return;
 	}
 	((Node) (event.getSource())).getScene().getWindow().hide();
