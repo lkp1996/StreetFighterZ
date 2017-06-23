@@ -20,7 +20,7 @@ public class FightController {
     private ProgressBar pbHpChar1;
 
     @FXML
-    private ProgressBar pbHChar2;
+    private ProgressBar pbHpChar2;
 
     @FXML
     private Button btnAttack1;
