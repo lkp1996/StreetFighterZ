@@ -196,11 +196,8 @@ public class CharSelectController {
 		layout.getChildren().add(msgInfo);
 		layout.getChildren().add(buttonOK);
 		Scene scenePopup = new Scene(layout, 350, 100);
-		
 		popup.setScene(scenePopup);
 		popup.showAndWait();
-	    // affiche popup pour sélectionner un personnage
-	    System.out.println("veuillez selectionner un personnage pour chaque joueur");
 	    return;
 	}
 	
