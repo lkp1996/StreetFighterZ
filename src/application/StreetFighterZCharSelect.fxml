@@ -49,8 +49,9 @@
 		<HBox prefHeight="177.0" prefWidth="570.0">
 			<children>
 				<VBox minWidth="120" alignment="TOP_CENTER">
-					<Label fx:id="name1" id="name1"  alignment="CENTER" minWidth="120" minHeight="50"/>
-					<ImageView fitHeight="150.0" fitWidth="120.0" 
+					<Label fx:id="name1" id="name1" alignment="CENTER" minWidth="120"
+						minHeight="50" />
+					<ImageView fitHeight="150.0" fitWidth="120.0"
 						pickOnBounds="true" preserveRatio="true" id="imageP1" fx:id="imageP1">
 						<HBox.margin>
 							<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
@@ -96,7 +97,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn2" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn2"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -115,7 +116,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn3" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn3"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -130,7 +131,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn4" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn4"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -149,7 +150,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn5" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn5"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -164,7 +165,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn6" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn6"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -199,7 +200,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn1" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn1"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -214,7 +215,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn2" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn2"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -232,7 +233,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn3" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn3"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -247,7 +248,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn4" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn4"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -265,7 +266,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn5" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn5"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -280,7 +281,7 @@
 										<Font size="8.0" />
 									</font>
 									<graphic>
-										<ImageView image="$btn6" fitHeight="50" fitWidth="50"
+										<ImageView fitHeight="50" fitWidth="50" image="$btn6"
 											pickOnBounds="true" preserveRatio="true" />
 									</graphic>
 								</Button>
@@ -294,8 +295,8 @@
 						<Insets bottom="15.0" left="15.0" right="15.0" />
 					</HBox.margin>
 				</VBox>
-				<VBox minWidth="120"  alignment="TOP_CENTER">
-					<Label fx:id="name2" id="name2" alignment="CENTER" minWidth="120" minHeight="50"/>
+				<VBox minWidth="120" alignment="TOP_CENTER">
+					<Label fx:id="name2" id="name2" alignment="CENTER" minWidth="120" minHeight="50" />
 					<ImageView fitHeight="150.0" fitWidth="120.0"
 						pickOnBounds="true" preserveRatio="true" id="imageP2" fx:id="imageP2">
 						<HBox.margin>

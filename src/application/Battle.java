@@ -10,6 +10,10 @@ public class Battle {
 	this.char2 = char2;
 	this.rounds = rounds;
     }
+    
+    public Battle(){
+	
+    }
 
     public Character getChar1() {
 	return char1;
