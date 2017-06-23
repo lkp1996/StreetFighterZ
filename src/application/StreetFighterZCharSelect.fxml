@@ -345,7 +345,7 @@
 			<children>
 				<Button id="btnBack" fx:id="btnBack" mnemonicParsing="false"
 					onAction="#goBackToMain" text="Back" />
-				<Slider fx:id="sldNumRound" blockIncrement="2.0"
+				<Slider fx:id="sldNumRound" blockIncrement="2.0" onMouseReleased="#changeRound"
 					majorTickUnit="2.0" max="5.0" min="1.0" minorTickCount="0"
 					showTickLabels="true" showTickMarks="true" value="1.0" />
 				<Button id="btnBattle" fx:id="btnBattle" mnemonicParsing="false"

@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 
 public class CharSelectModel implements ICharSelectModel {
     private IntegerProperty roundsPty;
+    private Battle battle = new Battle();
     public Character ryu;
     public Character chunLi;
     public Character jin;
@@ -12,8 +13,10 @@ public class CharSelectModel implements ICharSelectModel {
     public Character hitmonchan;
     public Character hitmonlee;
 
-    public CharSelectModel() {
+    public CharSelectModel(int difficulty, boolean solo) {
 	this.roundsPty = new SimpleIntegerProperty();
+	battle.setSolo(solo);
+	battle.setDifficulty(difficulty);
 
 	// Character 1
 	Attack hadoken = new Attack("Hadoken", 1, 0.5, 5);
@@ -58,7 +61,8 @@ public class CharSelectModel implements ICharSelectModel {
 	hitmonlee = new Character("Hitmonlee", 18, "../imgs/hitmonlee.png", attacksHitmonlee);
     }
 
-    @Override
+
+	@Override
     public int getRounds() {
 	return roundsPty.get();
     }

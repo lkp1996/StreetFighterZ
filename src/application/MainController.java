@@ -38,9 +38,16 @@ public class MainController {
 	@FXML
 	private void onSingleClick(ActionEvent event) {
 		try {
-			Parent charSelectParent = FXMLLoader.load(getClass().getResource("StreetFighterZCharSelect.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("StreetFighterZCharSelect.fxml"));
+			VBox charSelectParent = loader.load();
 			Scene charSelectScene = new Scene(charSelectParent);
 			Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			CharSelectController ctrl = loader.<CharSelectController>getController();
+			int difficulty;
+			if(rbEasy.isSelected()) difficulty = 1;
+			else if (rbMedium.isSelected()) difficulty = 2;
+			else difficulty = 3;
+			ctrl.init(difficulty, true);
 			appStage.setScene(charSelectScene);
 			appStage.show();
 		} catch (IOException e) {
@@ -55,9 +62,12 @@ public class MainController {
 	@FXML
 	private void onMultiClick(ActionEvent event) {
 		try {
-			Parent charSelectParent = FXMLLoader.load(getClass().getResource("StreetFighterZCharSelect.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("StreetFighterZCharSelect.fxml"));
+			VBox charSelectParent = loader.load();
 			Scene charSelectScene = new Scene(charSelectParent);
 			Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+			CharSelectController ctrl = loader.<CharSelectController>getController();
+			ctrl.init(0, false);
 			appStage.setScene(charSelectScene);
 			appStage.show();
 		} catch (IOException e) {

@@ -15,13 +15,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class CharSelectController {
 
-    private CharSelectModel model = new CharSelectModel();
+    private CharSelectModel model;
     private Battle battle = new Battle();
 
     @FXML
@@ -180,6 +181,13 @@ public class CharSelectController {
 	stage.setScene(scene);
 	stage.show();
     }
+    
+    @FXML
+    private void changeRound(MouseEvent event){
+    	if(sldNumRound.getValue()<=2)sldNumRound.setValue(1.0);
+    	else if (sldNumRound.getValue()<=4)sldNumRound.setValue(3.0);
+    	else sldNumRound.setValue(5.0);
+    }
 
     @FXML
     private void goToBattle(ActionEvent event) {
@@ -216,12 +224,20 @@ public class CharSelectController {
 	stage.show();
     }
 
-    public void init() {
+    
 
-    }
+    public CharSelectController() {
+    	
+    	
+	}
 
-    private boolean allPlayerSelectedCharacter() {
+	private boolean allPlayerSelectedCharacter() {
 	return j1Selected && j2Selected;
     }
+
+	public void init(int difficulty, boolean solo) {
+		model = new CharSelectModel(difficulty, solo);
+	}
+	
 
 }

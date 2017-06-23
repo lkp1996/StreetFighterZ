@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 
 public class FightController {
 
-	private static final String LOOSE = "You Gave up, you piece of shit !!";
+	private static final String LOOSE = "You gave up !?! Ya piece of shit !!";
 	private static final String P1WIN = "Player 1 WIN !!";
 	private static final String P2WIN = "Player 2 WIN !!";
 
@@ -68,15 +68,21 @@ public class FightController {
 
 	@FXML
 	private void attack(ActionEvent event) {
-
+		
+	}
+	
+	public void initFight(){
+		FightModel fight = new FightModel();
+		//fight.initBattle(...);
 	}
 
 	@FXML
 	private void giveUp(ActionEvent event) {
-		affichePopup(LOOSE, event);
+		affichePopup(LOOSE);
+		backToMain(event);
 	}
 
-	private void affichePopup(String message, ActionEvent event) {
+	private void affichePopup(String message) {
 		Stage popup = new Stage();
 		popup.initModality(Modality.APPLICATION_MODAL);
 		popup.setTitle("Fin de match");
@@ -91,7 +97,6 @@ public class FightController {
 		Scene scenePopup = new Scene(layout, 350, 100);
 		popup.setScene(scenePopup);
 		popup.showAndWait();
-		backToMain(event);
 	}
 
 	private void backToMain(ActionEvent event) {

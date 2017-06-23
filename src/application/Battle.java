@@ -3,6 +3,8 @@ package application;
 public class Battle {
     private Character char1;
     private Character char2;
+    private int difficulty;
+    private boolean solo;
     private int rounds;
 
     public Battle(Character char1, Character char2, int rounds) {
@@ -38,5 +40,23 @@ public class Battle {
     public void setRounds(int rounds) {
 	this.rounds = rounds;
     }
+
+	public int getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
+
+	public boolean isSolo() {
+		return solo;
+	}
+
+	public void setSolo(boolean solo) {
+		this.solo = solo;
+	}
+    
+    
 
 }
