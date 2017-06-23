@@ -182,9 +182,10 @@ public class CharSelectController {
     private void goToBattle(ActionEvent event) {
 	if (!allPlayerSelectedCharacter()) {
 	    // affiche popup pour sélectionner un personnage
-	    System.out.println("veuillez sélectionner un personnage pour chaque joueur");
+	    System.out.println("veuillez selectionner un personnage pour chaque joueur");
 	    return;
 	}
+	
 	((Node) (event.getSource())).getScene().getWindow().hide();
 	Stage stage = new Stage();
 	Parent root = null;

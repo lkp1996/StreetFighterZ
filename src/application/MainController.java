@@ -54,7 +54,6 @@ public class MainController {
 	 */
 	@FXML
 	private void onMultiClick(ActionEvent event) {
-		System.out.println("2 players click");
 		try {
 			Parent charSelectParent = FXMLLoader.load(getClass().getResource("StreetFighterZCharSelect.fxml"));
 			Scene charSelectScene = new Scene(charSelectParent);
