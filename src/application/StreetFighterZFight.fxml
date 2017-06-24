@@ -67,8 +67,8 @@
                   <Label fx:id="lblRndLostChar2" />
                </children>
             </HBox>
-            <ProgressBar prefHeight="18.0" prefWidth="355.0" progress="0.0" GridPane.columnIndex="2" />
-            <ProgressBar prefHeight="18.0" prefWidth="355.0" progress="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ProgressBar fx:id="pbHpChar2" prefHeight="18.0" prefWidth="355.0" progress="0.0" GridPane.columnIndex="2" />
+            <ProgressBar fx:id="pbHpChar1" prefHeight="18.0" prefWidth="355.0" progress="0.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane prefHeight="91.0" prefWidth="770.0">
