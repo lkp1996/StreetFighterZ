@@ -8,4 +8,6 @@ public interface ICharSelectModel {
     void setRounds(int rounds);
     
     IntegerProperty getRoundsPty();
+    
+    Battle getBattle();
 }

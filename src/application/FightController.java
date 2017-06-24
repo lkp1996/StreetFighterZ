@@ -23,6 +23,7 @@ public class FightController {
 	private static final String LOOSE = "You gave up !?! Ya piece of shit !!";
 	private static final String P1WIN = "Player 1 WIN !!";
 	private static final String P2WIN = "Player 2 WIN !!";
+	private Battle battle;
 
 	@FXML
 	private ImageView imgVChar1;
@@ -114,4 +115,9 @@ public class FightController {
 		stage.setScene(scene);
 		stage.show();
 	}
+	
+	public void init(Battle battle){
+		this.battle = battle;
+	}
+	
 }

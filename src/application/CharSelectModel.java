@@ -77,4 +77,12 @@ public class CharSelectModel implements ICharSelectModel {
 	return roundsPty;
     }
 
+
+	@Override
+	public Battle getBattle() {
+		return battle;
+	}
+    
+    
+
 }
