@@ -1,12 +1,14 @@
 package application;
 
 public class Character {
+    private int id;
     private String name;
     private int healthPoints;
     private String imgUrl;
     private Attack[] attacks;
 
-    public Character(String name, int healthPoints, String imgUrl, Attack[] attacks) {
+    public Character(int id, String name, int healthPoints, String imgUrl, Attack[] attacks) {
+	this.id = id;
 	this.name = name;
 	this.healthPoints = healthPoints;
 	this.imgUrl = imgUrl;
@@ -15,6 +17,14 @@ public class Character {
 
     public Character() {
 
+    }
+
+    public int getId() {
+	return id;
+    }
+
+    public void setId(int id) {
+	this.id = id;
     }
 
     public String getName() {
