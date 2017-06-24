@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +30,7 @@ public class FightController {
     private static final String P2WIN = "Player 2 WIN !!";
     private Battle battle;
     private FightModel model;
+    private Random random = new Random();
 
     private int hpChar1 = 0;
     private int hpChar2 = 0;
@@ -91,39 +93,51 @@ public class FightController {
 	    }
 	    txaLogs.appendText(this.battle.getChar1().getName() + " attacked " + this.battle.getChar2().getName()
 		    + " with " + currAttack.getName() + "\n");
-	    updateHPBar(2, currAttack.getDamage());
-	    this.battle.getChar2().setHealthPoints(currChar2HP - currAttack.getDamage());
+	    int damage = 0;
+	    if (isCritical(currAttack.getCriticalChance())) {
+		damage = (int) (currAttack.getDamage() * currAttack.getTimesCriticalDamage());
+		txaLogs.appendText("CRITICAL !!! \n");
+	    } else {
+		damage = currAttack.getDamage();
+	    }
+	    updateHPBar(2, damage);
+	    this.battle.getChar2().setHealthPoints(currChar2HP - damage);
 
 	    try {
 		TimeUnit.SECONDS.sleep(1);
 	    } catch (InterruptedException e) {
 		e.printStackTrace();
 	    }
-
-	    if (this.battle.getChar2().getHealthPoints() <= 0) {
-
-	    }
+	    txaLogs.appendText(this.battle.getChar2().getName() + " lost " + damage + " HP \n");
 	    checkPlayerWonRound(1, this.battle.getChar2().getHealthPoints(), event);
 	    txaLogs.appendText("Player 2's turn : \n");
 	} else {
 	    int currChar1HP = this.battle.getChar1().getHealthPoints();
 	    if (idClick.endsWith("1")) {
-		currAttack = this.battle.getChar1().getAttacks()[0];
+		currAttack = this.battle.getChar2().getAttacks()[0];
 	    } else if (idClick.endsWith("2")) {
-		currAttack = this.battle.getChar1().getAttacks()[1];
+		currAttack = this.battle.getChar2().getAttacks()[1];
 	    } else {
-		currAttack = this.battle.getChar1().getAttacks()[2];
+		currAttack = this.battle.getChar2().getAttacks()[2];
 	    }
 	    txaLogs.appendText(this.battle.getChar2().getName() + " attacked " + this.battle.getChar1().getName()
 		    + " with " + currAttack.getName() + "\n");
-	    updateHPBar(1, currAttack.getDamage());
-	    this.battle.getChar1().setHealthPoints(currChar1HP - currAttack.getDamage());
+	    int damage = 0;
+	    if (isCritical(currAttack.getCriticalChance())) {
+		damage = (int) (currAttack.getDamage() * currAttack.getTimesCriticalDamage());
+		txaLogs.appendText("CRITICAL !!! \n");
+	    } else {
+		damage = currAttack.getDamage();
+	    }
+	    updateHPBar(1, damage);
+	    this.battle.getChar1().setHealthPoints(currChar1HP - damage);
 
 	    try {
 		TimeUnit.SECONDS.sleep(1);
 	    } catch (InterruptedException e) {
 		e.printStackTrace();
 	    }
+	    txaLogs.appendText(this.battle.getChar1().getName() + " lost " + damage + " HP \n");
 	    checkPlayerWonRound(2, this.battle.getChar1().getHealthPoints(), event);
 	    txaLogs.appendText("Player 1's turn : \n");
 	}
@@ -184,11 +198,19 @@ public class FightController {
 	if (numPlayer == 1) {
 	    int playerHP = this.battle.getChar1().getHealthPoints();
 	    double newHP = (pbHpChar1.getProgress() / playerHP) * (playerHP - damageReceived);
-	    pbHpChar1.setProgress(newHP);
+	    if (newHP < 0.0) {
+		pbHpChar1.setProgress(0);
+	    } else {
+		pbHpChar1.setProgress(newHP);
+	    }
 	} else {
 	    int playerHP = this.battle.getChar2().getHealthPoints();
 	    double newHP = (pbHpChar2.getProgress() / playerHP) * (playerHP - damageReceived);
-	    pbHpChar2.setProgress(newHP);
+	    if (newHP < 0.0) {
+		pbHpChar2.setProgress(0);
+	    } else {
+		pbHpChar2.setProgress(newHP);
+	    }
 	}
     }
 
@@ -263,6 +285,10 @@ public class FightController {
 	Scene scene = new Scene(root);
 	stage.setScene(scene);
 	stage.show();
+    }
+
+    private boolean isCritical(double criticalChance) {
+	return random.nextDouble() <= criticalChance;
     }
 
     @FXML
