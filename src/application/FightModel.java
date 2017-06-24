@@ -37,4 +37,6 @@ public class FightModel {
 	return actualPlayer;
     }
 
+	
+
 }
