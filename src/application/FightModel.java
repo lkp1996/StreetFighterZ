@@ -4,11 +4,13 @@ public class FightModel {
     private int actualRnd;
     private Battle battle;
     private int actualPlayer;
+    private boolean solo;
 
-    public FightModel(int actualRnd, Battle battle, int actualPlayer) {
+    public FightModel(int actualRnd, Battle battle, int actualPlayer, boolean solo) {
 	this.actualRnd = actualRnd;
 	this.battle = battle;
 	this.actualPlayer = actualPlayer;
+	this.solo = solo;
     }
 
     public boolean isFightFinished() {
@@ -18,10 +20,14 @@ public class FightModel {
 
     public void nextRound() {
 	this.actualRnd++;
-	nextPlayer();
+	if(!solo) nextPlayer();
     }
 
-    public void nextPlayer() {
+    public void setActualPlayer(int actualPlayer) {
+		this.actualPlayer = actualPlayer;
+	}
+
+	public void nextPlayer() {
 	if (actualPlayer == 1) {
 	    actualPlayer = 2;
 	} else {
