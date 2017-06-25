@@ -136,7 +136,7 @@ public class FightController {
 		
 	}
 
-	private void attackAuto(ActionEvent event) {
+	private void attackAuto(ActionEvent event) { 
 		Random r = new Random();
 		int currChar1HP = this.battle.getChar1().getHealthPoints();
 		Attack currAttack = this.battle.getChar1().getAttacks()[r.nextInt(2)];

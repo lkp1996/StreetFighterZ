@@ -24,12 +24,7 @@ public class Attack {
 	}
 
 	public int getDamage() {
-		int dmgtmp = damage;
-		Random r = new Random();
-		int rndm = r.nextInt(99) + 1;
-		if (rndm < criticalChance)
-			dmgtmp = (int) (dmgtmp * timesCriticalDamage);
-		return dmgtmp;
+		return damage;
 	}
 
 	public void setDamage(int damage) {
