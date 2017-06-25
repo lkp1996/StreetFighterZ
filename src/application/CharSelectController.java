@@ -197,8 +197,8 @@ public class CharSelectController {
 	if (!allPlayerSelectedCharacter()) {
 	    Stage popup = new Stage();
 	    popup.initModality(Modality.APPLICATION_MODAL);
-	    popup.setTitle("Selection de personnages");
-	    Label msgInfo = new Label("Veuillez selectionner un personnage\npour chaque joueur");
+	    popup.setTitle("Characters selection");
+	    Label msgInfo = new Label("Please select one character\nfor each players");
 	    Button buttonOK = new Button("    OK    ");
 	    buttonOK.minWidth(200);
 	    buttonOK.setOnAction(e -> popup.close());
