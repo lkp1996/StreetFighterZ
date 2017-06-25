@@ -100,12 +100,9 @@ public class FightController {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
-			if (this.battle.getChar2().getHealthPoints() <= 0) {
-
-			}
-			checkPlayerWonRound(1, this.battle.getChar2().getHealthPoints(), event);
+			boolean fini = checkPlayerWonRound(1, this.battle.getChar2().getHealthPoints(), event);
 			txaLogs.appendText("Player 2's turn : \n");
+			if(fini) return;
 		} else if(!battle.isSolo()) {
 			int currChar1HP = this.battle.getChar1().getHealthPoints();
 			if (idClick.endsWith("1")) {
@@ -130,12 +127,13 @@ public class FightController {
 		}
 		if (battle.isSolo()) {
 			attackAuto(event);
-			return;
+		}else{
+			this.model.nextPlayer();
+			changeCharAttacks();
 		}
-		this.model.nextPlayer();
-		changeCharAttacks();
 		System.out.println("HP Char 1 : " + this.battle.getChar1().getHealthPoints());
 		System.out.println("HP Char 2 : " + this.battle.getChar2().getHealthPoints() + "\n");
+		
 	}
 
 	private void attackAuto(ActionEvent event) {
@@ -169,7 +167,7 @@ public class FightController {
 		}
 	}
 
-	public void checkPlayerWonRound(int numPlayer, int hpOponent, ActionEvent event) {
+	public boolean checkPlayerWonRound(int numPlayer, int hpOponent, ActionEvent event) {
 		if (hpOponent <= 0) {
 			if (numPlayer == 1) {
 				lblRndWonChar1.setText((Integer.parseInt(lblRndWonChar1.getText()) + 1) + "");
@@ -181,7 +179,9 @@ public class FightController {
 				txaLogs.appendText(this.battle.getChar2().getName() + " win this round \n");
 			}
 			nextRound(Integer.parseInt(lblRndWonChar1.getText()), Integer.parseInt(lblRndWonChar2.getText()), event);
+			return  true;
 		}
+		return false;
 	}
 
 	public void nextRound(int roundWonChar1, int roundWonChar2, ActionEvent event) {
@@ -218,8 +218,8 @@ public class FightController {
 
 	public void initFight() {
 		this.battle = CharSelectController.getBattle();
-
-		this.model = new FightModel(1, this.battle, 1);
+		
+		this.model = new FightModel(1, this.battle, 1, battle.isSolo());
 
 		hpChar1 = this.battle.getChar1().getHealthPoints();
 		hpChar2 = this.battle.getChar2().getHealthPoints();
